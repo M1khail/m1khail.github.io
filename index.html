@@ -1,84 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<title>Урок 6. Пример объектно-ориентированного подхода.</title>
+	<title>Шаблончик</title>
 	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <style>
-	#main {
-		position:relative;
-		margin: 100px auto;
-		padding: 5px;
-		width: 660px;
-		height:360px;
-		background-color: silver;
-		border: 5px solid grey;
-		border-radius:15px;
-	}
-	#scr {
-		margin:20px auto;
-		width: 600px;
-		height: 320px;
-		margin-top:20px;
-		background-color: white;
-		background-size:cover;
-		border: 2px solid black;
-		border-radius:10px;
-	}
-	button {
-		position: absolute;
-		top: 150px;
-		width: 25px;
-		height: 70px;
-		font: 12pt arial,tahoma,sans-serif;
-		text-align: center;
-	}
-	#left {
-		left:5px;
-	}
-	#right {
-		right:5px;
+	.container{
+		width: 100%;
+		font-family: Roboto;
+		margin:50px auto;
+		font-size:25px;
 	}
 </style>
 <script>
-	var slider = {
-		slides:['images/gallery_1.jpeg','images/gallery_2.jpeg','images/gallery_3.jpeg'],
-	list:0, // текущий кадр
-
-	set: function(image) { // установка фона
-		document.getElementById("scr").style.backgroundImage = "url("+image+")";
-	},
-	init: function() { 
-		this.set(this.slides[this.list]);
-		document.getElementById('left').setAttribute('disabled','');
-	},
-	left: function() { 
-		this.list--;
-		if(this.list == 0) document.getElementById('left').setAttribute('disabled','');
-		if(document.getElementById('right').hasAttribute('disabled')) document.getElementById('right').removeAttribute('disabled');
-		this.set(this.slides[this.list]);
-	},
-	right: function() { 
-		this.list++;
-		if(this.list == this.slides.length - 1) document.getElementById('right').setAttribute('disabled','');
-		if(document.getElementById('left').hasAttribute('disabled')) document.getElementById('left').removeAttribute('disabled');
-		if(this.list == this.slides.length) this.list = 0;
-		this.set(this.slides[this.list]);
-	}
-};
-window.onload = function() { 
-	slider.init();
-
-
-};
+	
 
 </script>
 <body>
-	<div id="main">
-		<button id="left" class='new-btn' onclick="slider.left();"><</button>
-		<div id="scr"></div>
-		<button id="right" onclick="slider.right();">></button>
-	</div>
-	<script src='jscript.js'></script>	
+	<div class="container">Ну просто не нравится.. что поделать...</div>
 </body>
 </html>
